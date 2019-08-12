@@ -1,0 +1,2 @@
+做几个tab adviser investor login email （report）
+变换的区域/文字 颜色闪烁高亮色1秒2次然后再变 js设置定时

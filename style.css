@@ -1,0 +1,14 @@
+.config {
+    float: left;
+    width: 30%;
+    height: 990px;
+}
+.display {
+    float: left;
+    width: 70%;
+    height: 990px;
+}
+#frame {
+    width: 100%;
+    height: 100%;
+}

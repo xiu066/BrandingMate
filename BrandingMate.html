@@ -1,12 +1,60 @@
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<title>BrandingMate</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">    
+    <title>BrandingMate</title>
+</head>    
 <body>
     <div class="main">
         <div class="config">
-            <p>config here</p>
+            <label for="AdviserHUB">   <input id="AdviserHUB"   type="radio" name="switchDisplay">AdviserHUB   </label>
+            <label for="InvestorHUB">  <input id="InvestorHUB"  type="radio" name="switchDisplay">InvestorHUB  </label>
+            <label for="LoginPage">    <input id="LoginPage"    type="radio" name="switchDisplay">LoginPage    </label>
+            <label for="Report">       <input id="Report"       type="radio" name="switchDisplay">Report       </label>
+            <label for="WelcomeEmail"> <input id="WelcomeEmail" type="radio" name="switchDisplay">Welcome✉ ️ </label>
+
+            <p>
+                <ul style="list-style: none;margin:0px;padding:0px;">
+                    <li><strong><i>Service</i></strong></li>
+                    <li>Organisation: <input type="text" placeholder="organisation name"></li>
+                    <li>Team: <input type="text" placeholder="team name"></li>
+                    <li>Brand Code: <input type="text" placeholder="myhub.hub24.com.au/<your brand code>"></li>
+                    <li>White Label: <input type="checkbox" name="whiteLable"></li>
+                    <li>(Co-branding vs White Label, click
+                        <a href="https://hub24limited.atlassian.net/wiki/spaces/PDOC/pages/8323158/Hub24+Products+White+labels" target="_blank">HERE</a>)
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                <ul style="list-style: none;margin:0px;padding:0px;">
+                    <li><strong><i>Product Information</i></strong></li>
+                    <li>T&Cs: <select>
+                        <option value="tc1">T&Cs Sample 2010</option>
+                        <option value="tc2">T&Cs Sample 2015</option>
+                        <option value="tc3">T&Cs Sample 2018</option>
+                        <option value="tc4">T&Cs Sample 2019</option>
+                      </select>
+                    </li>
+                    <li>IDPS - Override MP Summary Sheet: <input type="checkbox" name="overrideIDPS"></li>
+                    <li>Super - Override MP Summary Sheet: <input type="checkbox" name="overrideSuper"></li>
+                </ul>
+            </p>
+
+            <p>
+                <ul style="list-style: none;margin:0px;padding:0px;">
+                    <li><strong><i>Report Customization</i></strong></li>
+                    <li>Report Logo (jpg only): <input type="file" id="reportLogo" /></li>
+                    <li>Header BG Colour (default #1388b3): <input type="color" name="headerBG" value="#1388b3"></li>
+                    <li>Header Text Colour (default white):  <input type="color" name="headerText" value="#ffffff"></li>
+                    <li>Portrait Letterhead PDF (pdf only): <input type="file" id="portraitLetterheadPdf" /></li>
+                    <li>Portrait Letterhead Top Margin: <input type="text" placeholder="input a number"></li>
+                </ul>
+            </p>
+            <p></p>
         </div>
         <div class="display">
-            <iframe src="AdviserHUB.html" width="100%" height="100%"  name="displayPage"  scrolling="auto">yes</iframe>
+            <iframe id="frame" src="AdviserHUB.html" name="displayPage"  scrolling="auto">yes</iframe>
         </div>
     </div>
 </body>
