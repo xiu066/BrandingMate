@@ -8,7 +8,19 @@
     width: 70%;
     height: 990px;
 }
-#frame {
+.show {
     width: 100%;
     height: 100%;
+}
+#showAdviserHUB {
+    display: block;
+}
+#showInvestorHUB {
+    display: none;
+}
+#showLoginPage {
+    display: none;
+}
+.whiteLabelSettings {
+    color:gray;
 }
