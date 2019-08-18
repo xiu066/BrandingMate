@@ -1,50 +1,43 @@
+$(document).ready(function() {
 
-$(document).ready(function(){
-//switch between display pages
+    //load display pages     
+    $("#showAdviserHUB").html('<object id="AdviserHUB" type="text/html" data="AdviserHUB.html" width="100%" height="100%"></object>');
+    $("#showInvestorHUB").html('<object id="InvestorHUB" type="text/html" data="InvestorHUB.html" width="100%" height="100%"></object>');
+    $("#showLoginPage").html('<object id="LoginPage" type="text/html" data="LoginPage.html" width="100%" height="100%"></object>');
+    
+
+    //change 04 ofour color
+    $("#ofourSelect").change(function(){
+        var color = $("#ofourSelect").val();
+        console.log(color);
+        console.log($("#AdviserHUB").contents().find(".font-ofour").css( "color"));
+        $("#AdviserHUB").contents().find("body").after(`<style type="text/css">.font-ofour {color: ${color}} </style>`);
+        console.log($("#AdviserHUB").contents().find(".font-ofour").css( "color"));
+    });
+
+
+}); 
+
+//switch between pages
 function showAdviserHUB(){
-    $(".show").hide();
-    $("#showAdviserHUB").show();
+    $(".show").css("display","none");
+    $("#showAdviserHUB").css("display","block");
 }
-
 function showInvestorHUB(){
-    $(".show").hide();
-    $("#showInvestorHUB").show();
+    $(".show").css("display","none");
+    $("#showInvestorHUB").css("display","block");
+}
+function showLoginPage(){
+    $(".show").css("display","none");
+    $("#showLoginPage").css("display","block");
 }
 
-function showLoginPage(){
-    $(".show").hide();
-    $("#showLoginPage").show();
-}
 //change 04 ofour color
 
 
 
 
-$("#ofourSelect").change(
-    function () {
-        var color = $("#ofourSelect").val();
-        console.log(color);
-        $("#showAdviserHUB").contents().find(".font-ofour").css("color",color); 
-});
 
 
-// function ofourSelect() {
-//     // var color = $("#ofourSelect").val();
-//     // 
-// 	var iFrameDOM = $("iframe#showAdviserHUB").contents();
-
-// 	iFrameDOM.find("div").css("background-color", "#fff")
-//     //document.getElementById("demo").innerHTML = "You selected: " + x;
-//   }
 
 
-//turn on/off extra configurations for White Label
-// function checkWhiteLabel(checkbox){
-//     if(checkbox.checked==true) {
-//         $("#whiteLabelSettings").show();
-//     } else {
-//         $("#whiteLabelSettings").hide();
-//     }
-// }
-
-});
