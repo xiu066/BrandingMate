@@ -9,11 +9,11 @@
 <body>
     <div class="main">
         <div class="config">
-            <label for="AdviserHUB"> <input id="selectAdviserHUB" type="radio" name="switchDisplay" checked="checked" onclick="showAdviserHUB()">AdviserHUB </label>
-            <label for="InvestorHUB"> <input id="selectInvestorHUB" type="radio" name="switchDisplay" onclick="showInvestorHUB()">InvestorHUB </label>
-            <label for="LoginPage"> <input id="selectLoginPage" type="radio" name="switchDisplay" onclick="showLoginPage()">LoginPage </label>
+            <label for="AdviserHUB"> <input id="selectAdviserHUB" type="radio" name="switchDisplay" checked="checked" onclick="showAdviserHUB()">Adviser </label>
+            <label for="InvestorHUB"> <input id="selectInvestorHUB" type="radio" name="switchDisplay" onclick="showInvestorHUB()">Investor </label>
+            <label for="LoginPage"> <input id="selectLoginPage" type="radio" name="switchDisplay" onclick="showLoginPage()">Login </label>
             <label for="Report"> <input id="selectReport" type="radio" name="switchDisplay">Report </label>
-            <label for="WelcomeEmail"> <input id="selectWelcomeEmail" type="radio" name="switchDisplay">Welcome </label>
+            <label for="WelcomeEmail"> <input id="selectWelcomeEmail" type="radio" name="switchDisplay">Email </label>
 
             <div>
                 <p>                
@@ -22,9 +22,8 @@
                         <li>Organisation: <input type="text" placeholder="organisation name"></li>
                         <li>Team: <input type="text" placeholder="team name"></li>
                         <li>Brand Code: <input type="text" placeholder="myhub.hub24.com.au/YourBrandCodeHere"></li>
-                        <li><label for="checkWhiteLabel">White Label: </label><input id="checkWhiteLabel" type="checkbox" name="whiteLable"  onclick="checkWhiteLabel(this)"></li>
-                        <li>(Co-branding vs White Label, click
-                            <a href="https://hub24limited.atlassian.net/wiki/spaces/PDOC/pages/8323158/Hub24+Products+White+labels" target="_blank">HERE</a>)
+                        <li><label for="checkWhiteLabel">White Label*: </label><input id="checkWhiteLabel" type="checkbox" name="whiteLable"  onclick="checkWhiteLabel(this)">
+                            <a href="https://hub24limited.atlassian.net/wiki/spaces/PDOC/pages/8323158/Hub24+Products+White+labels" target="_blank">Co-branding OR White Label?</a>
                         </li>
                     </ul>
                 </p>
@@ -52,7 +51,7 @@
                 <p>
                     <ul style="list-style: none;margin:0px;padding:0px;">
                         <li><strong><i>Report Customization</i></strong></li>
-                        <li>Report Logo (JPG only): <input type="file" id="reportLogo"></li>
+                        <li>Report Logo (JPG): <input type="file" id="reportLogo"></li>
                         <li class="whiteLabelSettings">Header BG Colour (default #1388b3): <input type="color" name="headerBG" value="#1388b3" disabled></li>
                         <li class="whiteLabelSettings">Header Text Colour (default white): <input type="color" name="headerText" value="#ffffff" disabled></li>
                         <li class="whiteLabelSettings">Portrait Letterhead PDF (PDF only): <input type="file" id="portraitLetterheadPdf" disabled></li>
@@ -65,7 +64,7 @@
                     <p>
                         <ul style="list-style: none;margin:0px;padding:0px;">
                             <li><strong><i>Branding Settings</i></strong></li>
-                            <li>00. Brand Logo (backgroud-removed PNG): <input type="file" id="brandLogo"></li>
+                            <li>00. Brand Logo (PNG): <input type="file" id="brandLogo"></li>
                             <li class="whiteLabelSettings">01. Theme Colour Class: 
                                 <select style="color: #4B77BE" onChange="this.style.color=this.options[this.selectedIndex].style.color">
                                     <option id="default" value="default" style="color: #4B77BE">&#9608;blue-steel (default)</option>
@@ -131,259 +130,283 @@
                                 </select>
                             </li>
                             <li class="whiteLabelSettings">02. Primary Tile Colour Class: 
-                                <select style="color: #578EBE" onChange="this.style.color=this.options[this.selectedIndex].style.color">
-                                    <option id="default" value="default" style="color: #578EBE">&#9608;blue-madison (default)</option>
-                                    <option id="metronic-default" value="#E1E5EC" style="color: #E1E5EC">&#9608;metronic-default</option>
-                                    <option id="dark" value="#2F353B" style="color: #2F353B">&#9608;dark</option>
-                                    <option id="white" value="#FFFFFF" style="color: #FFFFFF">&#9608;white</option>
-                                    <option id="blue" value="#3598DC" style="color: #3598DC">&#9608;blue</option>
-                                    <option id="blue-madison" value="#578EBE" style="color: #578EBE">&#9608;blue-madison</option>
-                                    <option id="blue-chambray" value="#2C3E50" style="color: #2C3E50">&#9608;blue-chambray</option>
-                                    <option id="blue-ebonyclay" value="#22313F" style="color: #22313F">&#9608;blue-ebonyclay</option>
-                                    <option id="blue-hoki" value="#67809F" style="color: #67809F">&#9608;blue-hoki</option>
-                                    <option id="blue-steel" value="#4B77BE" style="color: #4B77BE">&#9608;blue-steel</option>
-                                    <option id="blue-soft" value="#4C87B9" style="color: #4C87B9">&#9608;blue-soft</option>
-                                    <option id="blue-dark" value="#5E738B" style="color: #5E738B">&#9608;blue-dark</option>
-                                    <option id="blue-sharp" value="#5C9BD1" style="color: #5C9BD1">&#9608;blue-sharp</option>
-                                    <option id="blue-oleo" value="#94A0B2" style="color: #94A0B2">&#9608;blue-oleo</option>
-                                    <option id="green" value="#32C5D2" style="color: #32C5D2">&#9608;green</option>
-                                    <option id="green-meadow" value="#1BBC9B" style="color: #1BBC9B">&#9608;green-meadow</option>
-                                    <option id="green-seagreen" value="#1BA39C" style="color: #1BA39C">&#9608;green-seagreen</option>
-                                    <option id="green-turquoise" value="#36D7B7" style="color: #36D7B7">&#9608;green-turquoise</option>
-                                    <option id="green-haze" value="#44B6AE" style="color: #44B6AE">&#9608;green-haze</option>
-                                    <option id="green-jungle" value="#26C281" style="color: #26C281">&#9608;green-jungle</option>
-                                    <option id="green-soft" value="#3FABA4" style="color: #3FABA4">&#9608;green-soft</option>
-                                    <option id="green-dark" value="#4DB3A2" style="color: #4DB3A2">&#9608;green-dark</option>
-                                    <option id="green-sharp" value="#2AB4C0" style="color: #2AB4C0">&#9608;green-sharp</option>
-                                    <option id="green-steel" value="#29B4B6" style="color: #29B4B6">&#9608;green-steel</option>
-                                    <option id="grey" value="#E5E5E5" style="color: #E5E5E5">&#9608;grey</option>
-                                    <option id="grey-steel" value="#E9EDEF" style="color: #E9EDEF">&#9608;grey-steel</option>
-                                    <option id="grey-cararra" value="#FAFAFA" style="color: #FAFAFA">&#9608;grey-cararra</option>
-                                    <option id="grey-gallery" value="#555555" style="color: #555555">&#9608;grey-gallery</option>
-                                    <option id="grey-cascade" value="#95A5A6" style="color: #95A5A6">&#9608;grey-cascade</option>
-                                    <option id="grey-silver" value="#BFBFBF" style="color: #BFBFBF">&#9608;grey-silver</option>
-                                    <option id="grey-salsa" value="#ACB5C3" style="color: #ACB5C3">&#9608;grey-salsa</option>
-                                    <option id="grey-salt" value="#BFCAD1" style="color: #BFCAD1">&#9608;grey-salt</option>
-                                    <option id="grey-mint" value="#525E64" style="color: #525E64">&#9608;grey-mint</option>
-                                    <option id="red" value="#E7505A" style="color: #E7505A">&#9608;red</option>
-                                    <option id="red-pink" value="#E08283" style="color: #E08283">&#9608;red-pink</option>
-                                    <option id="red-sunglo" value="#E26A6A" style="color: #E26A6A">&#9608;red-sunglo</option>
-                                    <option id="red-intense" value="#E35B5A" style="color: #E35B5A">&#9608;red-intense</option>
-                                    <option id="red-thunderbird" value="#D91E18" style="color: #D91E18">&#9608;red-thunderbird</option>
-                                    <option id="red-flamingo" value="#EF4836" style="color: #EF4836">&#9608;red-flamingo</option>
-                                    <option id="red-soft" value="#D05454" style="color: #D05454">&#9608;red-soft</option>
-                                    <option id="red-haze" value="#F36A5A" style="color: #F36A5A">&#9608;red-haze</option>
-                                    <option id="red-mint" value="#E43A45" style="color: #E43A45">&#9608;red-mint</option>
-                                    <option id="yellow" value="#C49F47" style="color: #C49F47">&#9608;yellow</option>
-                                    <option id="yellow-gold" value="#E87E04" style="color: #E87E04">&#9608;yellow-gold</option>
-                                    <option id="yellow-casablanca" value="#F2784B" style="color: #F2784B">&#9608;yellow-casablanca</option>
-                                    <option id="yellow-crusta" value="#F3C200" style="color: #F3C200">&#9608;yellow-crusta</option>
-                                    <option id="yellow-lemon" value="#F7CA18" style="color: #F7CA18">&#9608;yellow-lemon</option>
-                                    <option id="yellow-saffron" value="#F4D03F" style="color: #F4D03F">&#9608;yellow-saffron</option>
-                                    <option id="yellow-soft" value="#C8D046" style="color: #C8D046">&#9608;yellow-soft</option>
-                                    <option id="yellow-haze" value="#C5BF66" style="color: #C5BF66">&#9608;yellow-haze</option>
-                                    <option id="yellow-mint" value="#C5B96B" style="color: #C5B96B">&#9608;yellow-mint</option>
-                                    <option id="purple" value="#8E44AD" style="color: #8E44AD">&#9608;purple</option>
-                                    <option id="purple-plum" value="#8775A7" style="color: #8775A7">&#9608;purple-plum</option>
-                                    <option id="purple-medium" value="#BF55EC" style="color: #BF55EC">&#9608;purple-medium</option>
-                                    <option id="purple-studio" value="#8E44AD" style="color: #8E44AD">&#9608;purple-studio</option>
-                                    <option id="purple-wisteria" value="#9B59B6" style="color: #9B59B6">&#9608;purple-wisteria</option>
-                                    <option id="purple-seance" value="#9A12B3" style="color: #9A12B3">&#9608;purple-seance</option>
-                                    <option id="purple-intense" value="#8775A7" style="color: #8775A7">&#9608;purple-intense</option>
-                                    <option id="purple-sharp" value="#796799" style="color: #796799">&#9608;purple-sharp</option>
-                                    <option id="purple-soft" value="#8877A9" style="color: #8877A9">&#9608;purple-soft</option>
+                                <select id="otwoSelect" style="color: #578EBE" onChange="this.style.color=this.options[this.selectedIndex].style.color">
+                                    <option id="default" value="blue-madison" style="color: #578EBE">&#9608;blue-madison (default)</option>
+                                    <option id="metronic-default" value="metronic-default" style="color: #E1E5EC">&#9608;metronic-default</option>
+                                    <option id="dark" value="dark" style="color: #2F353B">&#9608;dark</option>
+                                    <option id="white" value="white" style="color: #FFFFFF">&#9608;white</option>
+                                    <option id="blue" value="blue" style="color: #3598DC">&#9608;blue</option>
+                                    <option id="blue-madison" value="blue-madison" style="color: #578EBE">&#9608;blue-madison</option>
+                                    <option id="blue-chambray" value="blue-chambray" style="color: #2C3E50">&#9608;blue-chambray</option>
+                                    <option id="blue-ebonyclay" value="blue-ebonyclay" style="color: #22313F">&#9608;blue-ebonyclay</option>
+                                    <option id="blue-hoki" value="blue-hoki" style="color: #67809F">&#9608;blue-hoki</option>
+                                    <option id="blue-steel" value="blue-steel" style="color: #4B77BE">&#9608;blue-steel</option>
+                                    <option id="blue-soft" value="blue-soft" style="color: #4C87B9">&#9608;blue-soft</option>
+                                    <option id="blue-dark" value="blue-dark" style="color: #5E738B">&#9608;blue-dark</option>
+                                    <option id="blue-sharp" value="blue-sharp" style="color: #5C9BD1">&#9608;blue-sharp</option>
+                                    <option id="blue-oleo" value="blue-oleo" style="color: #94A0B2">&#9608;blue-oleo</option>
+                                    <option id="green" value="green" style="color: #32C5D2">&#9608;green</option>
+                                    <option id="green-meadow" value="green-meadow" style="color: #1BBC9B">&#9608;green-meadow</option>
+                                    <option id="green-seagreen" value="green-seagreen" style="color: #1BA39C">&#9608;green-seagreen</option>
+                                    <option id="green-turquoise" value="green-turquoise" style="color: #36D7B7">&#9608;green-turquoise</option>
+                                    <option id="green-haze" value="green-haze" style="color: #44B6AE">&#9608;green-haze</option>
+                                    <option id="green-jungle" value="green-jungle" style="color: #26C281">&#9608;green-jungle</option>
+                                    <option id="green-soft" value="green-soft" style="color: #3FABA4">&#9608;green-soft</option>
+                                    <option id="green-dark" value="green-dark" style="color: #4DB3A2">&#9608;green-dark</option>
+                                    <option id="green-sharp" value="green-sharp" style="color: #2AB4C0">&#9608;green-sharp</option>
+                                    <option id="green-steel" value="green-steel" style="color: #29B4B6">&#9608;green-steel</option>
+                                    <option id="grey" value="grey" style="color: #E5E5E5">&#9608;grey</option>
+                                    <option id="grey-steel" value="grey-steel" style="color: #E9EDEF">&#9608;grey-steel</option>
+                                    <option id="grey-cararra" value="grey-cararra" style="color: #FAFAFA">&#9608;grey-cararra</option>
+                                    <option id="grey-gallery" value="grey-gallery" style="color: #555555">&#9608;grey-gallery</option>
+                                    <option id="grey-cascade" value="grey-cascade" style="color: #95A5A6">&#9608;grey-cascade</option>
+                                    <option id="grey-silver" value="grey-silver" style="color: #BFBFBF">&#9608;grey-silver</option>
+                                    <option id="grey-salsa" value="grey-salsa" style="color: #ACB5C3">&#9608;grey-salsa</option>
+                                    <option id="grey-salt" value="grey-salt" style="color: #BFCAD1">&#9608;grey-salt</option>
+                                    <option id="grey-mint" value="grey-mint" style="color: #525E64">&#9608;grey-mint</option>
+                                    <option id="red" value="red" style="color: #E7505A">&#9608;red</option>
+                                    <option id="red-pink" value="red-pink" style="color: #E08283">&#9608;red-pink</option>
+                                    <option id="red-sunglo" value="red-sunglo" style="color: #E26A6A">&#9608;red-sunglo</option>
+                                    <option id="red-intense" value="red-intense" style="color: #E35B5A">&#9608;red-intense</option>
+                                    <option id="red-thunderbird" value="red-thunderbird" style="color: #D91E18">&#9608;red-thunderbird</option>
+                                    <option id="red-flamingo" value="red-flamingo" style="color: #EF4836">&#9608;red-flamingo</option>
+                                    <option id="red-soft" value="red-soft" style="color: #D05454">&#9608;red-soft</option>
+                                    <option id="red-haze" value="red-haze" style="color: #F36A5A">&#9608;red-haze</option>
+                                    <option id="red-mint" value="red-mint" style="color: #E43A45">&#9608;red-mint</option>
+                                    <option id="yellow" value="yellow" style="color: #C49F47">&#9608;yellow</option>
+                                    <option id="yellow-gold" value="yellow-gold" style="color: #E87E04">&#9608;yellow-gold</option>
+                                    <option id="yellow-casablanca" value="yellow-casablanca" style="color: #F2784B">&#9608;yellow-casablanca</option>
+                                    <option id="yellow-crusta" value="yellow-crusta" style="color: #F3C200">&#9608;yellow-crusta</option>
+                                    <option id="yellow-lemon" value="yellow-lemon" style="color: #F7CA18">&#9608;yellow-lemon</option>
+                                    <option id="yellow-saffron" value="yellow-saffron" style="color: #F4D03F">&#9608;yellow-saffron</option>
+                                    <option id="yellow-soft" value="yellow-soft" style="color: #C8D046">&#9608;yellow-soft</option>
+                                    <option id="yellow-haze" value="yellow-haze" style="color: #C5BF66">&#9608;yellow-haze</option>
+                                    <option id="yellow-mint" value="yellow-mint" style="color: #C5B96B">&#9608;yellow-mint</option>
+                                    <option id="purple" value="purple" style="color: #8E44AD">&#9608;purple</option>
+                                    <option id="purple-plum" value="purple-plum" style="color: #8775A7">&#9608;purple-plum</option>
+                                    <option id="purple-medium" value="purple-medium" style="color: #BF55EC">&#9608;purple-medium</option>
+                                    <option id="purple-studio" value="purple-studio" style="color: #8E44AD">&#9608;purple-studio</option>
+                                    <option id="purple-wisteria" value="purple-wisteria" style="color: #9B59B6">&#9608;purple-wisteria</option>
+                                    <option id="purple-seance" value="purple-seance" style="color: #9A12B3">&#9608;purple-seance</option>
+                                    <option id="purple-intense" value="purple-intense" style="color: #8775A7">&#9608;purple-intense</option>
+                                    <option id="purple-sharp" value="purple-sharp" style="color: #796799">&#9608;purple-sharp</option>
+                                    <option id="purple-soft" value="purple-soft" style="color: #8877A9">&#9608;purple-soft</option>
                                 </select>
                             </li>
                             <li class="whiteLabelSettings">03. Other Tile Colour Class: 
-                                <select style="color: #E5E5E5" onChange="this.style.color=this.options[this.selectedIndex].style.color">
-                                    <option id="default" value="default" style="color: #E5E5E5">&#9608;grey (default)</option>
-                                    <option id="metronic-default" value="#E1E5EC" style="color: #E1E5EC">&#9608;metronic-default</option>
-                                    <option id="dark" value="#2F353B" style="color: #2F353B">&#9608;dark</option>
-                                    <option id="white" value="#FFFFFF" style="color: #FFFFFF">&#9608;white</option>
-                                    <option id="blue" value="#3598DC" style="color: #3598DC">&#9608;blue</option>
-                                    <option id="blue-madison" value="#578EBE" style="color: #578EBE">&#9608;blue-madison</option>
-                                    <option id="blue-chambray" value="#2C3E50" style="color: #2C3E50">&#9608;blue-chambray</option>
-                                    <option id="blue-ebonyclay" value="#22313F" style="color: #22313F">&#9608;blue-ebonyclay</option>
-                                    <option id="blue-hoki" value="#67809F" style="color: #67809F">&#9608;blue-hoki</option>
-                                    <option id="blue-steel" value="#4B77BE" style="color: #4B77BE">&#9608;blue-steel</option>
-                                    <option id="blue-soft" value="#4C87B9" style="color: #4C87B9">&#9608;blue-soft</option>
-                                    <option id="blue-dark" value="#5E738B" style="color: #5E738B">&#9608;blue-dark</option>
-                                    <option id="blue-sharp" value="#5C9BD1" style="color: #5C9BD1">&#9608;blue-sharp</option>
-                                    <option id="blue-oleo" value="#94A0B2" style="color: #94A0B2">&#9608;blue-oleo</option>
-                                    <option id="green" value="#32C5D2" style="color: #32C5D2">&#9608;green</option>
-                                    <option id="green-meadow" value="#1BBC9B" style="color: #1BBC9B">&#9608;green-meadow</option>
-                                    <option id="green-seagreen" value="#1BA39C" style="color: #1BA39C">&#9608;green-seagreen</option>
-                                    <option id="green-turquoise" value="#36D7B7" style="color: #36D7B7">&#9608;green-turquoise</option>
-                                    <option id="green-haze" value="#44B6AE" style="color: #44B6AE">&#9608;green-haze</option>
-                                    <option id="green-jungle" value="#26C281" style="color: #26C281">&#9608;green-jungle</option>
-                                    <option id="green-soft" value="#3FABA4" style="color: #3FABA4">&#9608;green-soft</option>
-                                    <option id="green-dark" value="#4DB3A2" style="color: #4DB3A2">&#9608;green-dark</option>
-                                    <option id="green-sharp" value="#2AB4C0" style="color: #2AB4C0">&#9608;green-sharp</option>
-                                    <option id="green-steel" value="#29B4B6" style="color: #29B4B6">&#9608;green-steel</option>
-                                    <option id="grey" value="#E5E5E5" style="color: #E5E5E5">&#9608;grey</option>
-                                    <option id="grey-steel" value="#E9EDEF" style="color: #E9EDEF">&#9608;grey-steel</option>
-                                    <option id="grey-cararra" value="#FAFAFA" style="color: #FAFAFA">&#9608;grey-cararra</option>
-                                    <option id="grey-gallery" value="#555555" style="color: #555555">&#9608;grey-gallery</option>
-                                    <option id="grey-cascade" value="#95A5A6" style="color: #95A5A6">&#9608;grey-cascade</option>
-                                    <option id="grey-silver" value="#BFBFBF" style="color: #BFBFBF">&#9608;grey-silver</option>
-                                    <option id="grey-salsa" value="#ACB5C3" style="color: #ACB5C3">&#9608;grey-salsa</option>
-                                    <option id="grey-salt" value="#BFCAD1" style="color: #BFCAD1">&#9608;grey-salt</option>
-                                    <option id="grey-mint" value="#525E64" style="color: #525E64">&#9608;grey-mint</option>
-                                    <option id="red" value="#E7505A" style="color: #E7505A">&#9608;red</option>
-                                    <option id="red-pink" value="#E08283" style="color: #E08283">&#9608;red-pink</option>
-                                    <option id="red-sunglo" value="#E26A6A" style="color: #E26A6A">&#9608;red-sunglo</option>
-                                    <option id="red-intense" value="#E35B5A" style="color: #E35B5A">&#9608;red-intense</option>
-                                    <option id="red-thunderbird" value="#D91E18" style="color: #D91E18">&#9608;red-thunderbird</option>
-                                    <option id="red-flamingo" value="#EF4836" style="color: #EF4836">&#9608;red-flamingo</option>
-                                    <option id="red-soft" value="#D05454" style="color: #D05454">&#9608;red-soft</option>
-                                    <option id="red-haze" value="#F36A5A" style="color: #F36A5A">&#9608;red-haze</option>
-                                    <option id="red-mint" value="#E43A45" style="color: #E43A45">&#9608;red-mint</option>
-                                    <option id="yellow" value="#C49F47" style="color: #C49F47">&#9608;yellow</option>
-                                    <option id="yellow-gold" value="#E87E04" style="color: #E87E04">&#9608;yellow-gold</option>
-                                    <option id="yellow-casablanca" value="#F2784B" style="color: #F2784B">&#9608;yellow-casablanca</option>
-                                    <option id="yellow-crusta" value="#F3C200" style="color: #F3C200">&#9608;yellow-crusta</option>
-                                    <option id="yellow-lemon" value="#F7CA18" style="color: #F7CA18">&#9608;yellow-lemon</option>
-                                    <option id="yellow-saffron" value="#F4D03F" style="color: #F4D03F">&#9608;yellow-saffron</option>
-                                    <option id="yellow-soft" value="#C8D046" style="color: #C8D046">&#9608;yellow-soft</option>
-                                    <option id="yellow-haze" value="#C5BF66" style="color: #C5BF66">&#9608;yellow-haze</option>
-                                    <option id="yellow-mint" value="#C5B96B" style="color: #C5B96B">&#9608;yellow-mint</option>
-                                    <option id="purple" value="#8E44AD" style="color: #8E44AD">&#9608;purple</option>
-                                    <option id="purple-plum" value="#8775A7" style="color: #8775A7">&#9608;purple-plum</option>
-                                    <option id="purple-medium" value="#BF55EC" style="color: #BF55EC">&#9608;purple-medium</option>
-                                    <option id="purple-studio" value="#8E44AD" style="color: #8E44AD">&#9608;purple-studio</option>
-                                    <option id="purple-wisteria" value="#9B59B6" style="color: #9B59B6">&#9608;purple-wisteria</option>
-                                    <option id="purple-seance" value="#9A12B3" style="color: #9A12B3">&#9608;purple-seance</option>
-                                    <option id="purple-intense" value="#8775A7" style="color: #8775A7">&#9608;purple-intense</option>
-                                    <option id="purple-sharp" value="#796799" style="color: #796799">&#9608;purple-sharp</option>
-                                    <option id="purple-soft" value="#8877A9" style="color: #8877A9">&#9608;purple-soft</option>
+                                <select id="othreeSelect" style="color: #95A5A6" onChange="this.style.color=this.options[this.selectedIndex].style.color">
+                                    <option id="default" value="grey-cascade" style="color: #95A5A6">&#9608;grey-cascade (default)</option>
+                                    <option id="metronic-default" value="metronic-default" style="color: #E1E5EC">&#9608;metronic-default</option>
+                                    <option id="dark" value="dark" style="color: #2F353B">&#9608;dark</option>
+                                    <option id="white" value="white" style="color: #FFFFFF">&#9608;white</option>
+                                    <option id="blue" value="blue" style="color: #3598DC">&#9608;blue</option>
+                                    <option id="blue-madison" value="blue-madison" style="color: #578EBE">&#9608;blue-madison</option>
+                                    <option id="blue-chambray" value="blue-chambray" style="color: #2C3E50">&#9608;blue-chambray</option>
+                                    <option id="blue-ebonyclay" value="blue-ebonyclay" style="color: #22313F">&#9608;blue-ebonyclay</option>
+                                    <option id="blue-hoki" value="blue-hoki" style="color: #67809F">&#9608;blue-hoki</option>
+                                    <option id="blue-steel" value="blue-steel" style="color: #4B77BE">&#9608;blue-steel</option>
+                                    <option id="blue-soft" value="blue-soft" style="color: #4C87B9">&#9608;blue-soft</option>
+                                    <option id="blue-dark" value="blue-dark" style="color: #5E738B">&#9608;blue-dark</option>
+                                    <option id="blue-sharp" value="blue-sharp" style="color: #5C9BD1">&#9608;blue-sharp</option>
+                                    <option id="blue-oleo" value="blue-oleo" style="color: #94A0B2">&#9608;blue-oleo</option>
+                                    <option id="green" value="green" style="color: #32C5D2">&#9608;green</option>
+                                    <option id="green-meadow" value="green-meadow" style="color: #1BBC9B">&#9608;green-meadow</option>
+                                    <option id="green-seagreen" value="green-seagreen" style="color: #1BA39C">&#9608;green-seagreen</option>
+                                    <option id="green-turquoise" value="green-turquoise" style="color: #36D7B7">&#9608;green-turquoise</option>
+                                    <option id="green-haze" value="green-haze" style="color: #44B6AE">&#9608;green-haze</option>
+                                    <option id="green-jungle" value="green-jungle" style="color: #26C281">&#9608;green-jungle</option>
+                                    <option id="green-soft" value="green-soft" style="color: #3FABA4">&#9608;green-soft</option>
+                                    <option id="green-dark" value="green-dark" style="color: #4DB3A2">&#9608;green-dark</option>
+                                    <option id="green-sharp" value="green-sharp" style="color: #2AB4C0">&#9608;green-sharp</option>
+                                    <option id="green-steel" value="green-steel" style="color: #29B4B6">&#9608;green-steel</option>
+                                    <option id="grey" value="grey" style="color: #E5E5E5">&#9608;grey</option>
+                                    <option id="grey-steel" value="grey-steel" style="color: #E9EDEF">&#9608;grey-steel</option>
+                                    <option id="grey-cararra" value="grey-cararra" style="color: #FAFAFA">&#9608;grey-cararra</option>
+                                    <option id="grey-gallery" value="grey-gallery" style="color: #555555">&#9608;grey-gallery</option>
+                                    <option id="grey-cascade" value="grey-cascade" style="color: #95A5A6">&#9608;grey-cascade</option>
+                                    <option id="grey-silver" value="grey-silver" style="color: #BFBFBF">&#9608;grey-silver</option>
+                                    <option id="grey-salsa" value="grey-salsa" style="color: #ACB5C3">&#9608;grey-salsa</option>
+                                    <option id="grey-salt" value="grey-salt" style="color: #BFCAD1">&#9608;grey-salt</option>
+                                    <option id="grey-mint" value="grey-mint" style="color: #525E64">&#9608;grey-mint</option>
+                                    <option id="red" value="red" style="color: #E7505A">&#9608;red</option>
+                                    <option id="red-pink" value="red-pink" style="color: #E08283">&#9608;red-pink</option>
+                                    <option id="red-sunglo" value="red-sunglo" style="color: #E26A6A">&#9608;red-sunglo</option>
+                                    <option id="red-intense" value="red-intense" style="color: #E35B5A">&#9608;red-intense</option>
+                                    <option id="red-thunderbird" value="red-thunderbird" style="color: #D91E18">&#9608;red-thunderbird</option>
+                                    <option id="red-flamingo" value="red-flamingo" style="color: #EF4836">&#9608;red-flamingo</option>
+                                    <option id="red-soft" value="red-soft" style="color: #D05454">&#9608;red-soft</option>
+                                    <option id="red-haze" value="red-haze" style="color: #F36A5A">&#9608;red-haze</option>
+                                    <option id="red-mint" value="red-mint" style="color: #E43A45">&#9608;red-mint</option>
+                                    <option id="yellow" value="yellow" style="color: #C49F47">&#9608;yellow</option>
+                                    <option id="yellow-gold" value="yellow-gold" style="color: #E87E04">&#9608;yellow-gold</option>
+                                    <option id="yellow-casablanca" value="yellow-casablanca" style="color: #F2784B">&#9608;yellow-casablanca</option>
+                                    <option id="yellow-crusta" value="yellow-crusta" style="color: #F3C200">&#9608;yellow-crusta</option>
+                                    <option id="yellow-lemon" value="yellow-lemon" style="color: #F7CA18">&#9608;yellow-lemon</option>
+                                    <option id="yellow-saffron" value="yellow-saffron" style="color: #F4D03F">&#9608;yellow-saffron</option>
+                                    <option id="yellow-soft" value="yellow-soft" style="color: #C8D046">&#9608;yellow-soft</option>
+                                    <option id="yellow-haze" value="yellow-haze" style="color: #C5BF66">&#9608;yellow-haze</option>
+                                    <option id="yellow-mint" value="yellow-mint" style="color: #C5B96B">&#9608;yellow-mint</option>
+                                    <option id="purple" value="purple" style="color: #8E44AD">&#9608;purple</option>
+                                    <option id="purple-plum" value="purple-plum" style="color: #8775A7">&#9608;purple-plum</option>
+                                    <option id="purple-medium" value="purple-medium" style="color: #BF55EC">&#9608;purple-medium</option>
+                                    <option id="purple-studio" value="purple-studio" style="color: #8E44AD">&#9608;purple-studio</option>
+                                    <option id="purple-wisteria" value="purple-wisteria" style="color: #9B59B6">&#9608;purple-wisteria</option>
+                                    <option id="purple-seance" value="purple-seance" style="color: #9A12B3">&#9608;purple-seance</option>
+                                    <option id="purple-intense" value="purple-intense" style="color: #8775A7">&#9608;purple-intense</option>
+                                    <option id="purple-sharp" value="purple-sharp" style="color: #796799">&#9608;purple-sharp</option>
+                                    <option id="purple-soft" value="purple-soft" style="color: #8877A9">&#9608;purple-soft</option>
                                 </select>
                             </li>
                             <li class="whiteLabelSettings">04. Primary Portlet Colour Class:
                                 <select id="ofourSelect" style="color: #578EBE" onChange="this.style.color=this.options[this.selectedIndex].style.color">
-                                    <option id="default" value="#578EBE" style="color: #578EBE">&#9608;blue-madison (default)</option>
-                                    <option id="metronic-default" value="#E1E5EC" style="color: #E1E5EC">&#9608;metronic-default</option>
-                                    <option id="dark" value="#2F353B" style="color: #2F353B">&#9608;dark</option>
-                                    <option id="white" value="#FFFFFF" style="color: #FFFFFF">&#9608;white</option>
-                                    <option id="blue" value="#3598DC" style="color: #3598DC">&#9608;blue</option>
-                                    <option id="blue-madison" value="#578EBE" style="color: #578EBE">&#9608;blue-madison</option>
-                                    <option id="blue-chambray" value="#2C3E50" style="color: #2C3E50">&#9608;blue-chambray</option>
-                                    <option id="blue-ebonyclay" value="#22313F" style="color: #22313F">&#9608;blue-ebonyclay</option>
-                                    <option id="blue-hoki" value="#67809F" style="color: #67809F">&#9608;blue-hoki</option>
-                                    <option id="blue-steel" value="#4B77BE" style="color: #4B77BE">&#9608;blue-steel</option>
-                                    <option id="blue-soft" value="#4C87B9" style="color: #4C87B9">&#9608;blue-soft</option>
-                                    <option id="blue-dark" value="#5E738B" style="color: #5E738B">&#9608;blue-dark</option>
-                                    <option id="blue-sharp" value="#5C9BD1" style="color: #5C9BD1">&#9608;blue-sharp</option>
-                                    <option id="blue-oleo" value="#94A0B2" style="color: #94A0B2">&#9608;blue-oleo</option>
-                                    <option id="green" value="#32C5D2" style="color: #32C5D2">&#9608;green</option>
-                                    <option id="green-meadow" value="#1BBC9B!important" style="color: #1BBC9B">&#9608;green-meadow</option>
-                                    <option id="green-seagreen" value="#1BA39C" style="color: #1BA39C">&#9608;green-seagreen</option>
-                                    <option id="green-turquoise" value="#36D7B7" style="color: #36D7B7">&#9608;green-turquoise</option>
-                                    <option id="green-haze" value="#44B6AE" style="color: #44B6AE">&#9608;green-haze</option>
-                                    <option id="green-jungle" value="#26C281" style="color: #26C281">&#9608;green-jungle</option>
-                                    <option id="green-soft" value="#3FABA4" style="color: #3FABA4">&#9608;green-soft</option>
-                                    <option id="green-dark" value="#4DB3A2" style="color: #4DB3A2">&#9608;green-dark</option>
-                                    <option id="green-sharp" value="#2AB4C0" style="color: #2AB4C0">&#9608;green-sharp</option>
-                                    <option id="green-steel" value="#29B4B6" style="color: #29B4B6">&#9608;green-steel</option>
-                                    <option id="grey" value="#E5E5E5" style="color: #E5E5E5">&#9608;grey</option>
-                                    <option id="grey-steel" value="#E9EDEF" style="color: #E9EDEF">&#9608;grey-steel</option>
-                                    <option id="grey-cararra" value="#FAFAFA" style="color: #FAFAFA">&#9608;grey-cararra</option>
-                                    <option id="grey-gallery" value="#555555" style="color: #555555">&#9608;grey-gallery</option>
-                                    <option id="grey-cascade" value="#95A5A6" style="color: #95A5A6">&#9608;grey-cascade</option>
-                                    <option id="grey-silver" value="#BFBFBF" style="color: #BFBFBF">&#9608;grey-silver</option>
-                                    <option id="grey-salsa" value="#ACB5C3" style="color: #ACB5C3">&#9608;grey-salsa</option>
-                                    <option id="grey-salt" value="#BFCAD1" style="color: #BFCAD1">&#9608;grey-salt</option>
-                                    <option id="grey-mint" value="#525E64" style="color: #525E64">&#9608;grey-mint</option>
-                                    <option id="red" value="#E7505A" style="color: #E7505A">&#9608;red</option>
-                                    <option id="red-pink" value="#E08283" style="color: #E08283">&#9608;red-pink</option>
-                                    <option id="red-sunglo" value="#E26A6A" style="color: #E26A6A">&#9608;red-sunglo</option>
-                                    <option id="red-intense" value="#E35B5A" style="color: #E35B5A">&#9608;red-intense</option>
-                                    <option id="red-thunderbird" value="#D91E18" style="color: #D91E18">&#9608;red-thunderbird</option>
-                                    <option id="red-flamingo" value="#EF4836" style="color: #EF4836">&#9608;red-flamingo</option>
-                                    <option id="red-soft" value="#D05454" style="color: #D05454">&#9608;red-soft</option>
-                                    <option id="red-haze" value="#F36A5A" style="color: #F36A5A">&#9608;red-haze</option>
-                                    <option id="red-mint" value="#E43A45" style="color: #E43A45">&#9608;red-mint</option>
-                                    <option id="yellow" value="#C49F47" style="color: #C49F47">&#9608;yellow</option>
-                                    <option id="yellow-gold" value="#E87E04" style="color: #E87E04">&#9608;yellow-gold</option>
-                                    <option id="yellow-casablanca" value="#F2784B" style="color: #F2784B">&#9608;yellow-casablanca</option>
-                                    <option id="yellow-crusta" value="#F3C200" style="color: #F3C200">&#9608;yellow-crusta</option>
-                                    <option id="yellow-lemon" value="#F7CA18" style="color: #F7CA18">&#9608;yellow-lemon</option>
-                                    <option id="yellow-saffron" value="#F4D03F" style="color: #F4D03F">&#9608;yellow-saffron</option>
-                                    <option id="yellow-soft" value="#C8D046" style="color: #C8D046">&#9608;yellow-soft</option>
-                                    <option id="yellow-haze" value="#C5BF66" style="color: #C5BF66">&#9608;yellow-haze</option>
-                                    <option id="yellow-mint" value="#C5B96B" style="color: #C5B96B">&#9608;yellow-mint</option>
-                                    <option id="purple" value="#8E44AD" style="color: #8E44AD">&#9608;purple</option>
-                                    <option id="purple-plum" value="#8775A7" style="color: #8775A7">&#9608;purple-plum</option>
-                                    <option id="purple-medium" value="#BF55EC" style="color: #BF55EC">&#9608;purple-medium</option>
-                                    <option id="purple-studio" value="#8E44AD" style="color: #8E44AD">&#9608;purple-studio</option>
-                                    <option id="purple-wisteria" value="#9B59B6" style="color: #9B59B6">&#9608;purple-wisteria</option>
-                                    <option id="purple-seance" value="#9A12B3" style="color: #9A12B3">&#9608;purple-seance</option>
-                                    <option id="purple-intense" value="#8775A7" style="color: #8775A7">&#9608;purple-intense</option>
-                                    <option id="purple-sharp" value="#796799" style="color: #796799">&#9608;purple-sharp</option>
-                                    <option id="purple-soft" value="#8877A9" style="color: #8877A9">&#9608;purple-soft</option>
+                                    <option id="default" value="blue-madison" style="color: #578EBE">&#9608;blue-madison (default)</option>
+                                    <option id="metronic-default" value="metronic-default" style="color: #E1E5EC">&#9608;metronic-default</option>
+                                    <option id="dark" value="dark" style="color: #2F353B">&#9608;dark</option>
+                                    <option id="white" value="white" style="color: #FFFFFF">&#9608;white</option>
+                                    <option id="blue" value="blue" style="color: #3598DC">&#9608;blue</option>
+                                    <option id="blue-madison" value="blue-madison" style="color: #578EBE">&#9608;blue-madison</option>
+                                    <option id="blue-chambray" value="blue-chambray" style="color: #2C3E50">&#9608;blue-chambray</option>
+                                    <option id="blue-ebonyclay" value="blue-ebonyclay" style="color: #22313F">&#9608;blue-ebonyclay</option>
+                                    <option id="blue-hoki" value="blue-hoki" style="color: #67809F">&#9608;blue-hoki</option>
+                                    <option id="blue-steel" value="blue-steel" style="color: #4B77BE">&#9608;blue-steel</option>
+                                    <option id="blue-soft" value="blue-soft" style="color: #4C87B9">&#9608;blue-soft</option>
+                                    <option id="blue-dark" value="blue-dark" style="color: #5E738B">&#9608;blue-dark</option>
+                                    <option id="blue-sharp" value="blue-sharp" style="color: #5C9BD1">&#9608;blue-sharp</option>
+                                    <option id="blue-oleo" value="blue-oleo" style="color: #94A0B2">&#9608;blue-oleo</option>
+                                    <option id="green" value="green" style="color: #32C5D2">&#9608;green</option>
+                                    <option id="green-meadow" value="green-meadow" style="color: #1BBC9B">&#9608;green-meadow</option>
+                                    <option id="green-seagreen" value="green-seagreen" style="color: #1BA39C">&#9608;green-seagreen</option>
+                                    <option id="green-turquoise" value="green-turquoise" style="color: #36D7B7">&#9608;green-turquoise</option>
+                                    <option id="green-haze" value="green-haze" style="color: #44B6AE">&#9608;green-haze</option>
+                                    <option id="green-jungle" value="green-jungle" style="color: #26C281">&#9608;green-jungle</option>
+                                    <option id="green-soft" value="green-soft" style="color: #3FABA4">&#9608;green-soft</option>
+                                    <option id="green-dark" value="green-dark" style="color: #4DB3A2">&#9608;green-dark</option>
+                                    <option id="green-sharp" value="green-sharp" style="color: #2AB4C0">&#9608;green-sharp</option>
+                                    <option id="green-steel" value="green-steel" style="color: #29B4B6">&#9608;green-steel</option>
+                                    <option id="grey" value="grey" style="color: #E5E5E5">&#9608;grey</option>
+                                    <option id="grey-steel" value="grey-steel" style="color: #E9EDEF">&#9608;grey-steel</option>
+                                    <option id="grey-cararra" value="grey-cararra" style="color: #FAFAFA">&#9608;grey-cararra</option>
+                                    <option id="grey-gallery" value="grey-gallery" style="color: #555555">&#9608;grey-gallery</option>
+                                    <option id="grey-cascade" value="grey-cascade" style="color: #95A5A6">&#9608;grey-cascade</option>
+                                    <option id="grey-silver" value="grey-silver" style="color: #BFBFBF">&#9608;grey-silver</option>
+                                    <option id="grey-salsa" value="grey-salsa" style="color: #ACB5C3">&#9608;grey-salsa</option>
+                                    <option id="grey-salt" value="grey-salt" style="color: #BFCAD1">&#9608;grey-salt</option>
+                                    <option id="grey-mint" value="grey-mint" style="color: #525E64">&#9608;grey-mint</option>
+                                    <option id="red" value="red" style="color: #E7505A">&#9608;red</option>
+                                    <option id="red-pink" value="red-pink" style="color: #E08283">&#9608;red-pink</option>
+                                    <option id="red-sunglo" value="red-sunglo" style="color: #E26A6A">&#9608;red-sunglo</option>
+                                    <option id="red-intense" value="red-intense" style="color: #E35B5A">&#9608;red-intense</option>
+                                    <option id="red-thunderbird" value="red-thunderbird" style="color: #D91E18">&#9608;red-thunderbird</option>
+                                    <option id="red-flamingo" value="red-flamingo" style="color: #EF4836">&#9608;red-flamingo</option>
+                                    <option id="red-soft" value="red-soft" style="color: #D05454">&#9608;red-soft</option>
+                                    <option id="red-haze" value="red-haze" style="color: #F36A5A">&#9608;red-haze</option>
+                                    <option id="red-mint" value="red-mint" style="color: #E43A45">&#9608;red-mint</option>
+                                    <option id="yellow" value="yellow" style="color: #C49F47">&#9608;yellow</option>
+                                    <option id="yellow-gold" value="yellow-gold" style="color: #E87E04">&#9608;yellow-gold</option>
+                                    <option id="yellow-casablanca" value="yellow-casablanca" style="color: #F2784B">&#9608;yellow-casablanca</option>
+                                    <option id="yellow-crusta" value="yellow-crusta" style="color: #F3C200">&#9608;yellow-crusta</option>
+                                    <option id="yellow-lemon" value="yellow-lemon" style="color: #F7CA18">&#9608;yellow-lemon</option>
+                                    <option id="yellow-saffron" value="yellow-saffron" style="color: #F4D03F">&#9608;yellow-saffron</option>
+                                    <option id="yellow-soft" value="yellow-soft" style="color: #C8D046">&#9608;yellow-soft</option>
+                                    <option id="yellow-haze" value="yellow-haze" style="color: #C5BF66">&#9608;yellow-haze</option>
+                                    <option id="yellow-mint" value="yellow-mint" style="color: #C5B96B">&#9608;yellow-mint</option>
+                                    <option id="purple" value="purple" style="color: #8E44AD">&#9608;purple</option>
+                                    <option id="purple-plum" value="purple-plum" style="color: #8775A7">&#9608;purple-plum</option>
+                                    <option id="purple-medium" value="purple-medium" style="color: #BF55EC">&#9608;purple-medium</option>
+                                    <option id="purple-studio" value="purple-studio" style="color: #8E44AD">&#9608;purple-studio</option>
+                                    <option id="purple-wisteria" value="purple-wisteria" style="color: #9B59B6">&#9608;purple-wisteria</option>
+                                    <option id="purple-seance" value="purple-seance" style="color: #9A12B3">&#9608;purple-seance</option>
+                                    <option id="purple-intense" value="purple-intense" style="color: #8775A7">&#9608;purple-intense</option>
+                                    <option id="purple-sharp" value="purple-sharp" style="color: #796799">&#9608;purple-sharp</option>
+                                    <option id="purple-soft" value="purple-soft" style="color: #8877A9">&#9608;purple-soft</option>
                                 </select>
                             </li>
                             <li class="whiteLabelSettings">05. Other Primary Portlet Colour Class:
-                                <select style="color: #95A5A6" onChange="this.style.color=this.options[this.selectedIndex].style.color">
-                                    <option id="default" value="default" style="color: #95A5A6">&#9608;grey-cascade (default)</option>
-                                    <option id="metronic-default" value="#E1E5EC" style="color: #E1E5EC">&#9608;metronic-default</option>
-                                    <option id="dark" value="#2F353B" style="color: #2F353B">&#9608;dark</option>
-                                    <option id="white" value="#FFFFFF" style="color: #FFFFFF">&#9608;white</option>
-                                    <option id="blue" value="#3598DC" style="color: #3598DC">&#9608;blue</option>
-                                    <option id="blue-madison" value="#578EBE" style="color: #578EBE">&#9608;blue-madison</option>
-                                    <option id="blue-chambray" value="#2C3E50" style="color: #2C3E50">&#9608;blue-chambray</option>
-                                    <option id="blue-ebonyclay" value="#22313F" style="color: #22313F">&#9608;blue-ebonyclay</option>
-                                    <option id="blue-hoki" value="#67809F" style="color: #67809F">&#9608;blue-hoki</option>
-                                    <option id="blue-steel" value="#4B77BE" style="color: #4B77BE">&#9608;blue-steel</option>
-                                    <option id="blue-soft" value="#4C87B9" style="color: #4C87B9">&#9608;blue-soft</option>
-                                    <option id="blue-dark" value="#5E738B" style="color: #5E738B">&#9608;blue-dark</option>
-                                    <option id="blue-sharp" value="#5C9BD1" style="color: #5C9BD1">&#9608;blue-sharp</option>
-                                    <option id="blue-oleo" value="#94A0B2" style="color: #94A0B2">&#9608;blue-oleo</option>
-                                    <option id="green" value="#32C5D2" style="color: #32C5D2">&#9608;green</option>
-                                    <option id="green-meadow" value="#1BBC9B" style="color: #1BBC9B">&#9608;green-meadow</option>
-                                    <option id="green-seagreen" value="#1BA39C" style="color: #1BA39C">&#9608;green-seagreen</option>
-                                    <option id="green-turquoise" value="#36D7B7" style="color: #36D7B7">&#9608;green-turquoise</option>
-                                    <option id="green-haze" value="#44B6AE" style="color: #44B6AE">&#9608;green-haze</option>
-                                    <option id="green-jungle" value="#26C281" style="color: #26C281">&#9608;green-jungle</option>
-                                    <option id="green-soft" value="#3FABA4" style="color: #3FABA4">&#9608;green-soft</option>
-                                    <option id="green-dark" value="#4DB3A2" style="color: #4DB3A2">&#9608;green-dark</option>
-                                    <option id="green-sharp" value="#2AB4C0" style="color: #2AB4C0">&#9608;green-sharp</option>
-                                    <option id="green-steel" value="#29B4B6" style="color: #29B4B6">&#9608;green-steel</option>
-                                    <option id="grey" value="#E5E5E5" style="color: #E5E5E5">&#9608;grey</option>
-                                    <option id="grey-steel" value="#E9EDEF" style="color: #E9EDEF">&#9608;grey-steel</option>
-                                    <option id="grey-cararra" value="#FAFAFA" style="color: #FAFAFA">&#9608;grey-cararra</option>
-                                    <option id="grey-gallery" value="#555555" style="color: #555555">&#9608;grey-gallery</option>
-                                    <option id="grey-cascade" value="#95A5A6" style="color: #95A5A6">&#9608;grey-cascade</option>
-                                    <option id="grey-silver" value="#BFBFBF" style="color: #BFBFBF">&#9608;grey-silver</option>
-                                    <option id="grey-salsa" value="#ACB5C3" style="color: #ACB5C3">&#9608;grey-salsa</option>
-                                    <option id="grey-salt" value="#BFCAD1" style="color: #BFCAD1">&#9608;grey-salt</option>
-                                    <option id="grey-mint" value="#525E64" style="color: #525E64">&#9608;grey-mint</option>
-                                    <option id="red" value="#E7505A" style="color: #E7505A">&#9608;red</option>
-                                    <option id="red-pink" value="#E08283" style="color: #E08283">&#9608;red-pink</option>
-                                    <option id="red-sunglo" value="#E26A6A" style="color: #E26A6A">&#9608;red-sunglo</option>
-                                    <option id="red-intense" value="#E35B5A" style="color: #E35B5A">&#9608;red-intense</option>
-                                    <option id="red-thunderbird" value="#D91E18" style="color: #D91E18">&#9608;red-thunderbird</option>
-                                    <option id="red-flamingo" value="#EF4836" style="color: #EF4836">&#9608;red-flamingo</option>
-                                    <option id="red-soft" value="#D05454" style="color: #D05454">&#9608;red-soft</option>
-                                    <option id="red-haze" value="#F36A5A" style="color: #F36A5A">&#9608;red-haze</option>
-                                    <option id="red-mint" value="#E43A45" style="color: #E43A45">&#9608;red-mint</option>
-                                    <option id="yellow" value="#C49F47" style="color: #C49F47">&#9608;yellow</option>
-                                    <option id="yellow-gold" value="#E87E04" style="color: #E87E04">&#9608;yellow-gold</option>
-                                    <option id="yellow-casablanca" value="#F2784B" style="color: #F2784B">&#9608;yellow-casablanca</option>
-                                    <option id="yellow-crusta" value="#F3C200" style="color: #F3C200">&#9608;yellow-crusta</option>
-                                    <option id="yellow-lemon" value="#F7CA18" style="color: #F7CA18">&#9608;yellow-lemon</option>
-                                    <option id="yellow-saffron" value="#F4D03F" style="color: #F4D03F">&#9608;yellow-saffron</option>
-                                    <option id="yellow-soft" value="#C8D046" style="color: #C8D046">&#9608;yellow-soft</option>
-                                    <option id="yellow-haze" value="#C5BF66" style="color: #C5BF66">&#9608;yellow-haze</option>
-                                    <option id="yellow-mint" value="#C5B96B" style="color: #C5B96B">&#9608;yellow-mint</option>
-                                    <option id="purple" value="#8E44AD" style="color: #8E44AD">&#9608;purple</option>
-                                    <option id="purple-plum" value="#8775A7" style="color: #8775A7">&#9608;purple-plum</option>
-                                    <option id="purple-medium" value="#BF55EC" style="color: #BF55EC">&#9608;purple-medium</option>
-                                    <option id="purple-studio" value="#8E44AD" style="color: #8E44AD">&#9608;purple-studio</option>
-                                    <option id="purple-wisteria" value="#9B59B6" style="color: #9B59B6">&#9608;purple-wisteria</option>
-                                    <option id="purple-seance" value="#9A12B3" style="color: #9A12B3">&#9608;purple-seance</option>
-                                    <option id="purple-intense" value="#8775A7" style="color: #8775A7">&#9608;purple-intense</option>
-                                    <option id="purple-sharp" value="#796799" style="color: #796799">&#9608;purple-sharp</option>
-                                    <option id="purple-soft" value="#8877A9" style="color: #8877A9">&#9608;purple-soft</option>
+                                <select id="ofiveSelect" style="color: #95A5A6" onChange="this.style.color=this.options[this.selectedIndex].style.color">
+                                    <option id="default" value="grey-cascade" style="color: #95A5A6">&#9608;grey-cascade (default)</option>
+                                    <option id="metronic-default" value="metronic-default" style="color: #E1E5EC">&#9608;metronic-default</option>
+                                    <option id="dark" value="dark" style="color: #2F353B">&#9608;dark</option>
+                                    <option id="white" value="white" style="color: #FFFFFF">&#9608;white</option>
+                                    <option id="blue" value="blue" style="color: #3598DC">&#9608;blue</option>
+                                    <option id="blue-madison" value="blue-madison" style="color: #578EBE">&#9608;blue-madison</option>
+                                    <option id="blue-chambray" value="blue-chambray" style="color: #2C3E50">&#9608;blue-chambray</option>
+                                    <option id="blue-ebonyclay" value="blue-ebonyclay" style="color: #22313F">&#9608;blue-ebonyclay</option>
+                                    <option id="blue-hoki" value="blue-hoki" style="color: #67809F">&#9608;blue-hoki</option>
+                                    <option id="blue-steel" value="blue-steel" style="color: #4B77BE">&#9608;blue-steel</option>
+                                    <option id="blue-soft" value="blue-soft" style="color: #4C87B9">&#9608;blue-soft</option>
+                                    <option id="blue-dark" value="blue-dark" style="color: #5E738B">&#9608;blue-dark</option>
+                                    <option id="blue-sharp" value="blue-sharp" style="color: #5C9BD1">&#9608;blue-sharp</option>
+                                    <option id="blue-oleo" value="blue-oleo" style="color: #94A0B2">&#9608;blue-oleo</option>
+                                    <option id="green" value="green" style="color: #32C5D2">&#9608;green</option>
+                                    <option id="green-meadow" value="green-meadow" style="color: #1BBC9B">&#9608;green-meadow</option>
+                                    <option id="green-seagreen" value="green-seagreen" style="color: #1BA39C">&#9608;green-seagreen</option>
+                                    <option id="green-turquoise" value="green-turquoise" style="color: #36D7B7">&#9608;green-turquoise</option>
+                                    <option id="green-haze" value="green-haze" style="color: #44B6AE">&#9608;green-haze</option>
+                                    <option id="green-jungle" value="green-jungle" style="color: #26C281">&#9608;green-jungle</option>
+                                    <option id="green-soft" value="green-soft" style="color: #3FABA4">&#9608;green-soft</option>
+                                    <option id="green-dark" value="green-dark" style="color: #4DB3A2">&#9608;green-dark</option>
+                                    <option id="green-sharp" value="green-sharp" style="color: #2AB4C0">&#9608;green-sharp</option>
+                                    <option id="green-steel" value="green-steel" style="color: #29B4B6">&#9608;green-steel</option>
+                                    <option id="grey" value="grey" style="color: #E5E5E5">&#9608;grey</option>
+                                    <option id="grey-steel" value="grey-steel" style="color: #E9EDEF">&#9608;grey-steel</option>
+                                    <option id="grey-cararra" value="grey-cararra" style="color: #FAFAFA">&#9608;grey-cararra</option>
+                                    <option id="grey-gallery" value="grey-gallery" style="color: #555555">&#9608;grey-gallery</option>
+                                    <option id="grey-cascade" value="grey-cascade" style="color: #95A5A6">&#9608;grey-cascade</option>
+                                    <option id="grey-silver" value="grey-silver" style="color: #BFBFBF">&#9608;grey-silver</option>
+                                    <option id="grey-salsa" value="grey-salsa" style="color: #ACB5C3">&#9608;grey-salsa</option>
+                                    <option id="grey-salt" value="grey-salt" style="color: #BFCAD1">&#9608;grey-salt</option>
+                                    <option id="grey-mint" value="grey-mint" style="color: #525E64">&#9608;grey-mint</option>
+                                    <option id="red" value="red" style="color: #E7505A">&#9608;red</option>
+                                    <option id="red-pink" value="red-pink" style="color: #E08283">&#9608;red-pink</option>
+                                    <option id="red-sunglo" value="red-sunglo" style="color: #E26A6A">&#9608;red-sunglo</option>
+                                    <option id="red-intense" value="red-intense" style="color: #E35B5A">&#9608;red-intense</option>
+                                    <option id="red-thunderbird" value="red-thunderbird" style="color: #D91E18">&#9608;red-thunderbird</option>
+                                    <option id="red-flamingo" value="red-flamingo" style="color: #EF4836">&#9608;red-flamingo</option>
+                                    <option id="red-soft" value="red-soft" style="color: #D05454">&#9608;red-soft</option>
+                                    <option id="red-haze" value="red-haze" style="color: #F36A5A">&#9608;red-haze</option>
+                                    <option id="red-mint" value="red-mint" style="color: #E43A45">&#9608;red-mint</option>
+                                    <option id="yellow" value="yellow" style="color: #C49F47">&#9608;yellow</option>
+                                    <option id="yellow-gold" value="yellow-gold" style="color: #E87E04">&#9608;yellow-gold</option>
+                                    <option id="yellow-casablanca" value="yellow-casablanca" style="color: #F2784B">&#9608;yellow-casablanca</option>
+                                    <option id="yellow-crusta" value="yellow-crusta" style="color: #F3C200">&#9608;yellow-crusta</option>
+                                    <option id="yellow-lemon" value="yellow-lemon" style="color: #F7CA18">&#9608;yellow-lemon</option>
+                                    <option id="yellow-saffron" value="yellow-saffron" style="color: #F4D03F">&#9608;yellow-saffron</option>
+                                    <option id="yellow-soft" value="yellow-soft" style="color: #C8D046">&#9608;yellow-soft</option>
+                                    <option id="yellow-haze" value="yellow-haze" style="color: #C5BF66">&#9608;yellow-haze</option>
+                                    <option id="yellow-mint" value="yellow-mint" style="color: #C5B96B">&#9608;yellow-mint</option>
+                                    <option id="purple" value="purple" style="color: #8E44AD">&#9608;purple</option>
+                                    <option id="purple-plum" value="purple-plum" style="color: #8775A7">&#9608;purple-plum</option>
+                                    <option id="purple-medium" value="purple-medium" style="color: #BF55EC">&#9608;purple-medium</option>
+                                    <option id="purple-studio" value="purple-studio" style="color: #8E44AD">&#9608;purple-studio</option>
+                                    <option id="purple-wisteria" value="purple-wisteria" style="color: #9B59B6">&#9608;purple-wisteria</option>
+                                    <option id="purple-seance" value="purple-seance" style="color: #9A12B3">&#9608;purple-seance</option>
+                                    <option id="purple-intense" value="purple-intense" style="color: #8775A7">&#9608;purple-intense</option>
+                                    <option id="purple-sharp" value="purple-sharp" style="color: #796799">&#9608;purple-sharp</option>
+                                    <option id="purple-soft" value="purple-soft" style="color: #8877A9">&#9608;purple-soft</option>
+                                </select>
+                            </li>
+                            <li class="whiteLabelSettings">06. Primary Portlet Style:
+                                <select>
+                                    <option id="light" value="light">light (default)</option>
+                                    <option id="dark" value="dark">dark</option>
+                                </select>
+                            </li>
+                            <li class="whiteLabelSettings">07. Secondary Portlet Style:
+                                <select>
+                                    <option id="light" value="light">light (default)</option>
+                                    <option id="dark" value="dark">dark</option>
+                                </select>
+                            </li>
+                            <li class="whiteLabelSettings">08. Other Portlet Style:
+                                <select>
+                                    <option id="dark" value="dark">dark (default)</option>
+                                    <option id="light" value="light">light</option>
+                                </select>
+                            </li>
+                            <li class="whiteLabelSettings">09. Main Menu Dropdown Style:
+                                <select>
+                                    <option id="light" value="light">light (default)</option>
+                                    <option id="dark" value="dark">dark</option>
                                 </select>
                             </li>
                         </ul>
